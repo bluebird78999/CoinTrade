@@ -2,6 +2,5 @@
 A demo for coin trade App.
 Designed by Larry ,and co-work with Cursor&claude4-sonnet.
 
-
-https://github.com/user-attachments/assets/ce2d266e-bee8-434a-ad1f-b6a1e6d576b4
+https://github.com/user-attachments/assets/5f15c6ac-029c-4a08-be84-0164f01762b5
 
