@@ -353,76 +353,16 @@ struct HomeView: View {
     private var coinListSection: some View {
         VStack(spacing: 0) {
             coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
-            
+            coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
+            coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
+            coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
+            coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
+            coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
+            coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
+            coinRow(symbol: "BNB", pair: "/USDT", volume: "1.08亿", price: "850.06", change: "+2.12%", changeColor: .green)
             Divider()
                 .padding(.leading, 16)
             
-            // Bottom navigation section
-            VStack(spacing: 16) {
-                HStack(spacing: 40) {
-                    VStack(spacing: 8) {
-                        Text("发现")
-                            .font(.system(size: 10))
-                            .foregroundColor(.black)
-                        Image(systemName: "house")
-                            .font(.system(size: 20))
-                            .foregroundColor(.black)
-                        Text("首页")
-                            .font(.system(size: 10))
-                            .foregroundColor(.black)
-                    }
-                    
-                    VStack(spacing: 8) {
-                        Text("关注")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                        Image(systemName: "chart.line.uptrend.xyaxis")
-                            .font(.system(size: 20))
-                            .foregroundColor(.gray)
-                        Text("行情")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                    }
-                    
-                    VStack(spacing: 8) {
-                        Text("活动")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                        Image(systemName: "arrow.left.arrow.right")
-                            .font(.system(size: 20))
-                            .foregroundColor(.gray)
-                        Text("交易")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                    }
-                    
-                    VStack(spacing: 8) {
-                        Text("新闻")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                        Image(systemName: "doc.text")
-                            .font(.system(size: 20))
-                            .foregroundColor(.gray)
-                        Text("合约")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                    }
-                    
-                    VStack(spacing: 8) {
-                        Text("公告")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                        Image(systemName: "creditcard")
-                            .font(.system(size: 20))
-                            .foregroundColor(.gray)
-                        Text("资产")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
-                    }
-                }
-            }
-            .padding(.vertical, 16)
-            .background(Color.white)
         }
     }
     
