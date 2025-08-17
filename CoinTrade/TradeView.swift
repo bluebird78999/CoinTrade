@@ -37,32 +37,36 @@ struct TradeView: View {
     ]
     
     var body: some View {
-        NavigationView {
+        GeometryReader { geometry in
             VStack(spacing: 0) {
-                // Header
+                // Header with safe area
                 headerView
+                    .padding(.top, geometry.safeAreaInsets.top)
                 
                 // Trading pair info
                 tradingPairView
                 
-                HStack(spacing: 0) {
-                    // Order book
-                    orderBookView
-                        .frame(maxWidth: .infinity)
-                    
-                    // Trading panel
-                    tradingPanelView
-                        .frame(maxWidth: .infinity)
+                ScrollView {
+                    VStack(spacing: 0) {
+                        HStack(spacing: 0) {
+                            // Order book
+                            orderBookView
+                                .frame(maxWidth: .infinity)
+                            
+                            // Trading panel
+                            tradingPanelView
+                                .frame(maxWidth: .infinity)
+                        }
+                        .frame(minHeight: 400)
+                        
+                        // Bottom section
+                        bottomSectionView
+                    }
                 }
-                
-                // Bottom section
-                bottomSectionView
-                
-                Spacer()
             }
             .background(Color(UIColor.systemGray6))
+            .ignoresSafeArea(.all, edges: .top)
         }
-        .navigationBarHidden(true)
     }
     
     private var headerView: some View {

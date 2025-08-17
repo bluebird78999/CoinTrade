@@ -15,28 +15,35 @@ struct AssetsView: View {
     let assetTabs = ["币种", "账户"]
     
     var body: some View {
-        NavigationView {
+        GeometryReader { geometry in
             VStack(spacing: 0) {
-                // Header tabs
+                // Header tabs with safe area
                 headerView
+                    .padding(.top, geometry.safeAreaInsets.top)
                 
-                // Balance section
-                balanceSection
-                
-                // Action buttons
-                actionButtonsSection
-                
-                // Asset tabs
-                assetTabsSection
-                
-                // Asset list
-                assetListSection
-                
-                Spacer()
+                ScrollView {
+                    VStack(spacing: 0) {
+                        // Balance section
+                        balanceSection
+                        
+                        // Action buttons
+                        actionButtonsSection
+                        
+                        // Asset tabs
+                        assetTabsSection
+                        
+                        // Asset list
+                        assetListSection
+                        
+                        // Extra space for better scrolling
+                        Color.clear
+                            .frame(height: 100)
+                    }
+                }
             }
             .background(Color(UIColor.systemGray6))
+            .ignoresSafeArea(.all, edges: .top)
         }
-        .navigationBarHidden(true)
     }
     
     private var headerView: some View {

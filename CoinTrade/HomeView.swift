@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var showingTradeMarket = false
+    @Binding var showingTradeMarket: Bool
     @State private var searchText = ""
     @State private var selectedSegment = 0
     @State private var selectedFilter = 0
+    
+    init(showingTradeMarket: Binding<Bool> = .constant(false)) {
+        self._showingTradeMarket = showingTradeMarket
+    }
     
     let segments = ["自选", "热门", "Alpha", "新币上线", "涨幅榜", "跌幅榜"]
     let filters = ["全部", "现货"]
@@ -48,13 +52,6 @@ struct HomeView: View {
                 .refreshable {
                     // 下拉刷新时显示交易市场
                     showingTradeMarket = true
-                }
-                
-                // Trade Market Overlay
-                if showingTradeMarket {
-                    TradeMarketView(isPresented: $showingTradeMarket)
-                        .transition(.move(edge: .top))
-                        .zIndex(1)
                 }
             }
         }

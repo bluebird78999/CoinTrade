@@ -27,37 +27,46 @@ struct TradeMarketView: View {
     ]
     
     var body: some View {
-        NavigationView {
+        GeometryReader { geometry in
             VStack(spacing: 0) {
-                // Header
+                // Header with safe area
                 headerView
+                    .padding(.top, geometry.safeAreaInsets.top)
                 
-                // Recent browsing section
-                recentBrowsingSection
+                // Scrollable content
+                ScrollView {
+                    VStack(spacing: 0) {
+                        // Recent browsing section
+                        recentBrowsingSection
+                        
+                        // Hot products section
+                        hotProductsSection
+                        
+                        // Self-selection section
+                        selfSelectionSection
+                        
+                        // Categories section
+                        categoriesSection
+                        
+                        // Your exclusive section
+                        exclusiveSection
+                        
+                        // Hot section
+                        hotSection
+                        
+                        // Extra padding for bottom button
+                        Color.clear
+                            .frame(height: 80)
+                    }
+                }
                 
-                // Hot products section
-                hotProductsSection
-                
-                // Self-selection section
-                selfSelectionSection
-                
-                // Categories section
-                categoriesSection
-                
-                // Your exclusive section
-                exclusiveSection
-                
-                // Hot section
-                hotSection
-                
-                Spacer()
-                
-                // Return to home button
+                // Return to home button - fixed at bottom
                 returnHomeButton
+                    .padding(.bottom, geometry.safeAreaInsets.bottom)
             }
             .background(Color(UIColor.systemGray6))
+            .ignoresSafeArea(.all)
         }
-        .navigationBarHidden(true)
     }
     
     private var headerView: some View {
